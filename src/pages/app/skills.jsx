@@ -26,13 +26,13 @@ const Skills = () => {
       data-aos="fade-up"
       data-aos-anchor-placement="top-center"
       data-aos-delay="100"
-      className="max-w-4xl w-full mx-auto p-6 rounded-lg bg-white bg-opacity-45 shadow-md"
+      className="max-w-4xl z-30 w-full mx-auto p-6 rounded-lg bg-white bg-opacity-45 shadow-md"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map((skillCategory, index) => (
           <div key={index} className="bg-white relative p-4 rounded-lg shadow hover:scale-100 duration-700">
-                        <img src={"/settingWheel.gif"} alt="" className='absolute top-0 opacity-35  right-0 h-[100px] w-[100px] md:w-[80px] md:h-[80px] mx-auto'/>
-                        <img src={"/busvan.gif"} alt="" className='absolute bottom-0   right-0 h-[100px] w-[100px] md:w-[80px] md:h-[80px] mx-auto'/>
+                        <img src={"/settingWheel.gif"} alt="" className='absolute top-0 z-30 opacity-35  right-0 h-[100px] w-[100px] md:w-[80px] md:h-[80px] mx-auto'/>
+                        <img src={"/busvan.gif"} alt="" className='absolute bottom-0 z-0  right-0 h-[100px] w-[100px] md:w-[80px] md:h-[80px] mx-auto'/>
 
             <div className="flex items-center gap-2 mb-4">
               {skillCategory.icon} {/* Render the icon */}

@@ -26,15 +26,15 @@ const handleRedirect = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main className="bg-[#23939b]  text-blue-500 min-h-screen p-2 space-y-8 relative">
+      <main className="bg-[#ffffff]  text-blue-500 min-h-screen p-2 space-y-8 relative">
         <span onClick={handleRedirect} className='fixed cursor-pointer animate-bounce bottom-5 right-4 md:right-8 p-3 rounded-full bg-purple-400
         text-[30px] text-white z-50'><FaWhatsapp/></span>
         {/* Banner */}
-        <div className="container flex mx-auto min-h-[75vh] justify-center items-center bg-white border shadow-lg rounded-lg p-6">
-        
-          <div className="flex flex-col relative md:flex-row space-y-6 justify-center items-center">
+        <div className="container flex relative mx-auto min-h-[75vh] justify-center items-center bg-white  shadow-lg rounded-lg">
+        <img src="/bannerBgImg.png" alt="" className='absolute inset-0 z-0 h-full w-full object-fill'/>
+          <div className="flex flex-col relative md:flex-row space-y-6 justify-center items-center p-6">
           
-            <div className="flex-1 space-y-1 relative z-50">
+            <div className="flex-1 space-y-1 relative z-30">
               <>
                 <h1  data-aos="flip-up" className="text-[30px] font-bold group uppercase duration-500 bg-gradient-to-r from-purple-400 to-pink-200 text-white p-3">Hi, I am <span className='group-hover:underline duration-300 group-hover:leading-snug'>SathishKumar R</span></h1>
                 <h3 className="text-[20px] relative flex items-center gap-x-1"><span>MERN Stack developer </span>  <img src={"/tagLineGif.gif"} alt="" className='w-[25px] h-[25px] opacity-45'/></h3>
@@ -64,18 +64,21 @@ const handleRedirect = () => {
    
         {/* Skills */}
         <div className="container sectionScrollInSmall md:sectionScrollInLg flex flex-col mx-auto min-h-[82vh] justify-center items-center  bg-white shadow-lg rounded-lg  p-3 md:p-6 relative" id="skills">
-        <img src={"/bgDot.gif"} alt="" className='absolute inset-0 z-0 h-full w-full object-fill bg-repeat-x'/>
 
         <img src="/diwaliTop.gif" alt="" className='absolute top-0 z-30 rounded-tl-md left-0 h-[60px] w-[60px] md:w-[100px] md:h-[100px] mx-auto'/>
           <h1 className="text-3xl font-bold mb-6  z-30 text-center text-purple-500 underline underline-offset-4">Skills</h1>
           <Skills />
+          <img src="/purpleBg.png" alt="" className='absolute opacity-25 bottom-0 right-0 left-0 w-full z-0 rounded-tl-md '/>
+
         </div>
 
         {/* Experiences */}
         <div className="container sectionScrollInSmall md:sectionScrollInLg flex flex-col mx-auto min-h-[82vh] justify-center items-center bg-white shadow-lg rounded-lg  p-3 md:p-6 relative" id="experiences">
         <img src="/diwaliTop.gif" alt="" className='absolute top-0 rounded-tl-md left-0 h-[60px] w-[60px] md:w-[100px] md:h-[100px] mx-auto'/>
-          <h2 className="text-3xl font-bold mb-4 text-center text-purple-500 underline underline-offset-4">Experiences</h2>
+          <h2 className="text-3xl z-30 font-bold mb-4 text-center text-purple-500 underline underline-offset-4">Experiences</h2>
           <Experiences />
+          <img src="/purpleBg.png" alt="" className='absolute opacity-25 bottom-0 right-0 left-0 w-full z-0 rounded-tl-md '/>
+
         </div>
 
         {/* projects */}
@@ -84,6 +87,8 @@ const handleRedirect = () => {
         <h1 className="text-3xl font-bold mb-4 text-center text-purple-500 underline underline-offset-4">Projects</h1>
 
         <ProjectsSection/>
+        <img src="/purpleBg.png" alt="" className='absolute opacity-25 bottom-0 right-0 left-0 w-full z-0 rounded-tl-md '/>
+
         </div>
 
       {/* contact section */}

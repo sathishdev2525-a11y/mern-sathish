@@ -10,15 +10,15 @@ export default function DropSection({pageRef, createdSite}) {
     
      const [{ isOver }, dropRef] = useDrop({
         accept: 'COMPONENT',
-        drop: (item) => {
+        drop: (item) => { 
         
             if(!pageRef) return ;
             
             
             if (createdSite && createdSite.length > 0 && createdSite[0].compName == 'navbar') {
                  // Check if the component already exists
-                 let findComp = createdSite.find((val) => val.compName === item.compName);
-                 if (findComp) {
+                 let findComp = createdSite.find((val) => val.compName === 'navbar');
+                 if (findComp.compName == item.compName) {
                      alert('Nav already added');
                      return; // Early return to stop further execution
                  }
@@ -69,7 +69,8 @@ export default function DropSection({pageRef, createdSite}) {
                         <div key={i}>{val.component}</div> // Display component data
                     ))
                 ) : (
-                    <div>Drop items here</div>
+                    <div className='h-full w-full flex justify-center items-center
+                    text-white font-bold '>No Data To Preview!</div>
                 )}
             </div>
         );
@@ -82,7 +83,7 @@ export default function DropSection({pageRef, createdSite}) {
                 scrollRef.current = node;
             }}
             className={`h-full p-4 transition-colors duration-200 ${
-                isOver ? 'bg-green-100' : 'bg-red-50'
+                isOver ? 'bg-green-100 border-[10px] border-[#64ce64]' : 'bg-gray-100'
             } overflow-y-auto`}
             style={{ maxHeight: '100vh' }}
         >

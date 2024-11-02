@@ -11,6 +11,8 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return <StoreDatas>
+    <CartProvider>
     <Component {...pageProps} />
+    </CartProvider>
     </StoreDatas>;
 }

@@ -15,7 +15,7 @@ const FlexCardComp = () => {
       <h2 className="text-4xl font-bold text-center mb-8 text-gray-700">Our Services</h2>
       <div className="flex flex-wrap justify-center gap-6">
         {flexData.map((card, index) => (
-          <div key={index} className="bg-white p-4 rounded-lg shadow-md w-full sm:w-64 md:w-72 lg:w-80 flex flex-col items-center hover:scale-105 transform transition duration-300">
+          <div key={index} className="bg-white w-[30%] p-4 rounded-lg shadow-md flex flex-col items-center hover:scale-105 transform transition duration-300">
             <Image
               src={card.imageUrl}
               alt={card.title}

@@ -6,7 +6,7 @@ const ProjectsSection=()=>{
 
 
     return <div data-aos="fade-up"
-    data-aos-anchor-placement="top-center" data-aos-delay="100" className="max-w-4xl w-full mx-auto p-4 md:p-6 rounded-lg shadow-md bgCloud text-white">
+    data-aos-anchor-placement="top-center" data-aos-delay="100" className="max-w-4xl z-30 w-full mx-auto p-4 md:p-6 rounded-lg shadow-md bgCloud text-white">
 
           {/* Projects */}
          

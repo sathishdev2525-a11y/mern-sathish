@@ -17,12 +17,12 @@ export default function WordPressClone({children}) {
             <WordPressNavbar />
             <div className='flex w-full overflow-hidden min-h-[100vh]'>
                 {/* Drag section */}
-                <div className='w-[20%] bg-gray-200 bg-opacity-45'>
+                <div className='w-[20%] bg-gray-100 bg-opacity-45'>
                     <ListingComponents />
                 </div>
 
                 {/* Drop section */}
-                <div className='w-[80%] bg-red-50'>
+                <div className='w-[80%] bg-gray-100'>
                     {children}
                   
                 </div>

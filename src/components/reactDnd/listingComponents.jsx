@@ -28,7 +28,7 @@ function DraggableComponent({ component }) {
     return (
         <li
             ref={dragRef}
-            className={`border rounded-lg w-[60%] mx-auto text-center ${
+            className={`border bg-white rounded-lg w-[60%] mx-auto text-center cursor-pointer hover:bg-opacity-45 ${
                 isDragging ? 'opacity-50' : 'opacity-100'
             }`}
         >

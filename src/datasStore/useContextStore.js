@@ -126,7 +126,7 @@ const StoreDatas = ({children})=>{
         }
     ])
 
-    const [createdSite, setCreatedSite] = useState(null);
+    const [createdSite, setCreatedSite] = useState({});
   
 
   
@@ -164,16 +164,13 @@ const StoreDatas = ({children})=>{
 
 
     const setSiteDatasToStore = (pageName, data) => {
-      console.log(pageName, data);
-      debugger
-      // Check if createdSite exists and access the specified page
+      
       let temp = createdSite && createdSite[pageName] 
-          ? [...createdSite[pageName], data] // Spread existing data and add new data
-          : [data]; // If createdSite or the page doesn't exist, initialize with data
-          debugger
+          ? [...createdSite[pageName], data]
+          : [data];
       setCreatedSite((prev) => ({
           ...prev,
-          [pageName]: temp, // Update the specific page data
+          [pageName]: temp,
       }));
   };
   

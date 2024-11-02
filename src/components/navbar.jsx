@@ -18,13 +18,13 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-gradient-to-r from-black via-black to-pink-400  text-white sticky top-0 z-50">
+    <nav className="bg-[#cd47e7] bg-opacity text-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex w-full items-center justify-between">
             <div className="">
               <Link href="/" className="text-white text-xl font-bold uppercase">
-                MERN Portfolio
+                Sathish Portfolio
               </Link>
             </div>
             <div className="hidden md:block">

@@ -31,7 +31,7 @@ const Experiences = () => {
       data-aos="fade-up"
       data-aos-anchor-placement="top-center"
       data-aos-delay="100"
-      className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md w-[90%] mx-auto"
+      className="bg-white bg-opacity-20 p-6 rounded-lg shadow-md w-[90%] mx-auto z-30"
     >
       <div className="space-y-6">
         {experience.map((exp, index) => (

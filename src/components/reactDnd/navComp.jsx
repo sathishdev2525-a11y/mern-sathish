@@ -10,7 +10,7 @@ const Navbar = () => {
   if(!navData) return <div>No Data!</div>
   
   return (
-    <nav className="bg-gradient-to-r from-purple-500 to-blue-500 p-4 shadow-md">
+    <nav className="bg-gradient-to-r from-purple-500 to-blue-500 p-4 shadow-md sticky top-0">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
@@ -21,11 +21,17 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6">
-          {navData.links.map((link, index) => (
-            <Link href={`/dnd/${link}`} key={index}>
+          {navData.links.map((link, index) => {
+            if(link === '+'){
+              return<button className="text-white font-semibold animate-pulse hover:text-gray-200
+               uppercase">Add Pages</button>
+            }
+            else{
+              return <Link href={`/dnd/${link}`} key={index}>
               <span className="text-white capitalize hover:text-gray-200">{link}</span>
             </Link>
-          ))}
+            }
+})}
         </div>
 
         {/* Mobile Menu Button */}
