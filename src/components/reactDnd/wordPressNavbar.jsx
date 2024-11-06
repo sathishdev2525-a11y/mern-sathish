@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { getStoreData } from '@/datasStore/useContextStore';
 
+import { FaRegEye } from "react-icons/fa";
+
 const WordPressNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -22,7 +24,7 @@ const WordPressNavbar = () => {
     <nav className="bg-white shadow-md sticky top-0 w-full z-10">
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link href="/">
-         <span>WordPress Clone</span>
+         <span className='text-[#cd47e7]'>WordPress Clone</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -30,7 +32,7 @@ const WordPressNavbar = () => {
           {navData.links.map((link, index) => (
             <div key={index} className="relative group">
               <span className='cursor-pointer'>
-                <span className="text-gray-700 hover:text-blue-500">{link.label}</span>
+                <span className="text-[#cd47e7] hover:text-blue-500">{link.label}</span>
               </span>
               {link.dropdown && (
                 <div
@@ -47,7 +49,7 @@ const WordPressNavbar = () => {
               )}
             </div>
           ))}
-                            <button onClick={()=>setPreview(!preview)}>View</button>
+          <button className='border text-[#2bb12b] flex items-center gap-x-1 rounded px-2 py-1 animate-pulse bg-[#ebffeb] hover:text-[#43b143] hover:border-[#48d148] duration-300' onClick={()=>setPreview(!preview)}><span>Preview</span> <FaRegEye/></button>
 
         </div>
 

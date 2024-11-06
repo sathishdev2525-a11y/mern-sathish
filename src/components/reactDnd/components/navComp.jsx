@@ -2,36 +2,44 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { getStoreData } from '@/datasStore/useContextStore';
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const {getNav}= getStoreData()
-  const [navData, setNavData] = useState(getNav())
-  
-  if(!navData) return <div>No Data!</div>
-  
+  const { addPage}= getStoreData()
+  const [isAddPage, setIsAddPage] = useState(false)
+  const [pageName, setPageName]= useState('')
+  if(!props) return <div>No Data!</div>
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    addPage(pageName);
+    setIsAddPage(false)
+  }
   return (
-    <nav className="bg-gradient-to-r from-purple-500 to-blue-500 p-4 shadow-md sticky top-0">
+    <nav className="bg-gradient-to-r from-purple-500 to-purple-500 p-4 z-30 capitalize shadow-md sticky top-0">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center text-white">
           <Link href="/">
-          {navData.logo}
+          {props.obj.renderDatas.logo}
           </Link>
         </div>
+    {isAddPage && <div className='absolute flex justify-center items-center inset-0 z-50 h-screen bg-black bg-opacity-35'>
+      
+      <form onSubmit={handleSubmit}>
 
+        <input type="text" onChange={(e)=>setPageName(e.target.value)}/>
+      </form>
+      <button onClick={()=>setIsAddPage(false)} className="text-white font-semibold animate-pulse hover:text-gray-200
+               uppercase">back</button></div>}
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6">
-          {navData.links.map((link, index) => {
-            if(link === '+'){
-              return<button className="text-white font-semibold animate-pulse hover:text-gray-200
-               uppercase">Add Pages</button>
-            }
-            else{
+          {props.obj.renderDatas.links.map((link, index) => {
+            
               return <Link href={`/dnd/${link}`} key={index}>
               <span className="text-white capitalize hover:text-gray-200">{link}</span>
-            </Link>
-            }
-})}
+            </Link>          
+          })}
+          <button onClick={()=>setIsAddPage(true)} className="text-white font-semibold animate-pulse hover:text-gray-200
+               uppercase">Add Pages</button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -51,7 +59,7 @@ const Navbar = () => {
       {/* Mobile Links */}
       {isOpen && (
         <div className="md:hidden bg-gradient-to-r from-purple-500 to-blue-500 p-4">
-          {navData.links.map((link, index) => (
+          {props.links.map((link, index) => (
             <Link href={`/${link}`} key={index}>
               <span
                 onClick={() => setIsOpen(false)} // Close menu on link click

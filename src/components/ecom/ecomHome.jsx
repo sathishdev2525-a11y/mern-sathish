@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import EcomProductCard from './productCard';
 import Loader from '../loader';
-import { CartData } from '../storeContext';
+import { CartData } from '../../datasStore/storeContext';
 
 
 const EcomHome = () => {

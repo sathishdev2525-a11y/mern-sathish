@@ -8,7 +8,6 @@ import Footer from '@/components/footer';
 import { FaWhatsapp } from "react-icons/fa";
 import ProjectsSection from './projects';
 import ContactSection from './contactSection';
-import ChatArray from '@/components/chatArray';
 
 export default function AppHome() {
 

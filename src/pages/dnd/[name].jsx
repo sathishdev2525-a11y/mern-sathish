@@ -1,6 +1,5 @@
-import DropSection from '@/components/reactDnd/dropSection';
+import DropSection from '@/components/reactDnd/dropSection/dropSection';
 import WordPressClone from '@/components/reactDnd/mergComp';
-import Navbar from '@/components/reactDnd/navComp';
 import { getStoreData } from '@/datasStore/useContextStore';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';

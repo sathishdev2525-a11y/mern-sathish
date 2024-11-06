@@ -2,7 +2,7 @@ import EcomHome from "@/components/ecom/ecomHome";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { BsCart2 } from "react-icons/bs";
 import { useContext } from "react";
-import { CartData } from "@/components/storeContext";
+import { CartData } from "@/datasStore/storeContext";
 import { useRouter } from "next/router";
 
 const EcomSection = () => {

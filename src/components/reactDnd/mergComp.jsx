@@ -3,8 +3,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
 import { useRouter } from 'next/router';
-import ListingComponents from './listingComponents';
-import DropSection from './dropSection';
+import ListingComponents from './dropSection/listingComponents';
 import WordPressNavbar from './wordPressNavbar';
 
 

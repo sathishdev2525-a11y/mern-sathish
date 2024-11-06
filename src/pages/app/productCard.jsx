@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { MdArrowBackIosNew, MdStar } from 'react-icons/md';
-import { CartData } from '@/components/storeContext';
+import { CartData } from '@/datasStore/storeContext';
 import Loader from '@/components/loader';
 
 const ProductViewSection = () => {

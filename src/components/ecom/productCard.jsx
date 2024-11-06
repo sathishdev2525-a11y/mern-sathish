@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { MdStar } from "react-icons/md";
-import { CartData } from "../storeContext";
+import { CartData } from "../../datasStore/storeContext";
 
 const EcomProductCard = ({ product, itemFrom }) => {
 

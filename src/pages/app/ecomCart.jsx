@@ -1,6 +1,6 @@
 import { MdArrowBackIosNew } from "react-icons/md";
 import { BsCart2 } from "react-icons/bs";
-import { CartData } from "@/components/storeContext";
+import { CartData } from "@/datasStore/storeContext";
 import { useRouter } from "next/router";
 import EcomProductCard from "@/components/ecom/productCard";
 

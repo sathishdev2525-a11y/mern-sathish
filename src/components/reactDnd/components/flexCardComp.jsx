@@ -1,20 +1,15 @@
-import { getStoreData } from '@/datasStore/useContextStore';
 import Image from 'next/image';
-import { useState } from 'react';
 
-const FlexCardComp = () => {
-    
-  const {getFlex}= getStoreData()
-  const [flexData, setFlexData] = useState(getFlex())
+const FlexCardComp = (props) => {
   
-  if(!flexData) return <div>No Data!</div>
+  if(!props.obj) return <div>No Data!</div>
   
 
   return (
     <div className="p-6 bg-gray-100">
       <h2 className="text-4xl font-bold text-center mb-8 text-gray-700">Our Services</h2>
       <div className="flex flex-wrap justify-center gap-6">
-        {flexData.map((card, index) => (
+        {props.obj.renderDatas.map((card, index) => (
           <div key={index} className="bg-white w-[30%] p-4 rounded-lg shadow-md flex flex-col items-center hover:scale-105 transform transition duration-300">
             <Image
               src={card.imageUrl}
