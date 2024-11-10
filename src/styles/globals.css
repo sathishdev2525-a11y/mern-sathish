@@ -71,6 +71,12 @@ html {
     background-size: "cover";
    
   }
+  .openBtn{
+    background-image: url('/open.gif');
+   background-size: contain;
+   background-repeat: no-repeat;
+   width: 100%;
+  }
 
   .scroll-hidden {
     overflow: scroll;
