@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function RenderComp ({Component, obj}){
+export default function RenderComp ({obj}){
 
     return(
-        <div>
-        {Component && <Component obj={obj} />} 
-    </div>
+        <>
+        {obj && <obj.component obj={obj} />} 
+    </>
     )
 
 }

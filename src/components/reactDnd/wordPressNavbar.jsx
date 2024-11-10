@@ -21,7 +21,7 @@ const WordPressNavbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 w-full z-10">
+    <nav className="bg-white shadow-md sticky top-0 w-full z-30">
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link href="/">
          <span className='text-[#cd47e7]'>WordPress Clone</span>
@@ -42,7 +42,7 @@ const WordPressNavbar = () => {
                 >
                   {link.dropdown.map((item, idx) => (
                     <span key={idx}>
-                      <span className="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md">{item}</span>
+                      <span className="px-1 text-[14px] flex py-2 text-gray-600 hover:bg-gray-100 rounded-md">{item}</span>
                     </span>
                   ))}
                 </div>

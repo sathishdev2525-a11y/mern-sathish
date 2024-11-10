@@ -15,7 +15,7 @@ export default function ContainerComp({obj}) {
         drop: (item, monitor) => {
             const didDrop = monitor.didDrop();
             if (didDrop) return;
-            debugger
+            
             if (obj) handleNestedDrop(obj.id, {...item, id:Math.random(), children:[]}, name);
         },
         collect: (monitor) => ({

@@ -31,8 +31,8 @@ const StoreCompDatas = ({children})=>{
             component: Navbar,
             styles:{},
             renderDatas:{
-                logo: "website Name!", // Update with the actual path to your logo
-                links: ["homePage", "aboutPage"], // Add more links as needed
+                logo: "click here to Edit!", // Update with the actual path to your logo
+                links: ["homePage" ], // Add more links as needed
               },
             icon:<TbLayoutNavbarCollapse/>,
         },

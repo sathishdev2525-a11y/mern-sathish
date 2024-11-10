@@ -4,7 +4,6 @@ export default function DraggableComponent({ component }) {
     const [{ isDragging }, dragRef] = useDrag({
         type: 'COMPONENT',
         item: () => {
-            console.log("Drag started for component:", component);
             return { ...component };
         },
         collect: (monitor) => ({
@@ -18,7 +17,7 @@ export default function DraggableComponent({ component }) {
         className={`flex flex-col cursor-move hover:bg-gray-100 items-center p-2 rounded-md border transition-opacity duration-200 ${
             isDragging ? 'opacity-50' : 'opacity-100'
         } bg-[#fdfbfb] border-[#cd47e7]`}
-    >w
+    >
         <span className="text-[30px] text-[#d885e9]">{component.icon}</span>
         <span className="text-[10px] mt-1 text-[#ca71db]">{component.compName}</span>
     </li>

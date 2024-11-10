@@ -1,4 +1,5 @@
 import DropSection from '@/components/reactDnd/dropSection/dropSection';
+import RenderComp from '@/components/reactDnd/dropSection/renderComp';
 import WordPressClone from '@/components/reactDnd/mergComp';
 import { getStoreData } from '@/datasStore/useContextStore';
 import { useRouter } from 'next/router';
@@ -7,26 +8,26 @@ import React, { useEffect, useState } from 'react';
 export default function DndDynamic (){
     const router = useRouter();
     const { name } = router.query;
-    const { createdSite }= getStoreData()
+    const { createdSite , getNav}= getStoreData()
 
 
     const getDataByPageRef = () => {
         let data;
         if(!createdSite) return null;
-        for (const [key, val] of Object.entries(createdSite)) { // Use Object.entries to iterate over the object
+        for (const [key, val] of Object.entries(createdSite)) {
             if (key === name) {
-                data = val; // Assign the value to data if the key matches the reference
-                break; // Exit the loop once the match is found
+                data = val; 
+                break; 
             }
         }
-        return data; // Return the found data
+        return data; 
     };
 
-    let temp = getDataByPageRef()
+    let pageData = getDataByPageRef()
+    let navData = getNav()
     return(
         <WordPressClone>
-            {/* {createdSite && createdSite.length > 0 ? <Navbar/> : null} */}
-            <DropSection pageRef={name} createdSite={temp}/>
+                       <DropSection pageRef={name} createdSite={pageData} navData={navData}/>
         </WordPressClone>
 
     )

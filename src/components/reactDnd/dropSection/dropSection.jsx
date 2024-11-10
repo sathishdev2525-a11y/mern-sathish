@@ -4,9 +4,9 @@ import { getStoreData } from '@/datasStore/useContextStore';
 import { MdClose } from "react-icons/md";
 import RenderComp from './renderComp';
 
-export default function DropSection({pageRef, createdSite}) {
+export default function DropSection({pageRef, createdSite, navData}) {
     const { setSiteDatasToStore, preview, setPreview,
-        removeComponent,
+        removeComponent, addNav
      } = getStoreData();
    
      const [{ isOver, isOverCurrent }, dropRef] = useDrop({
@@ -20,29 +20,23 @@ export default function DropSection({pageRef, createdSite}) {
             if (didDrop) {
                 return;
             }
+            if(!navData && item.compName != 'navbar'){
+                return alert("Add Nav First!")
+            }
+            else if(!navData && item.compName == 'navbar'){
+                addNav( item);
+            }
+
+            if (navData) {
     
-            if (createdSite && createdSite.length > 0) {
-                const hasNavbar = createdSite.some((val) => val.compName === 'navbar');
-    
-                if (hasNavbar && item.compName === 'navbar') {
+                if (navData && item.compName === 'navbar') {
                     alert('Navbar already added');
                     return; 
                 }
                 setSiteDatasToStore(pageRef, item);
-            } 
-            
-            else if (createdSite && createdSite.length === 0) {
-                if (item.compName === 'navbar') {
-                    setSiteDatasToStore(pageRef, item);
-                } else {
-                    alert("Please add the navbar first");
-                    return; 
-                }
             }
             
-            else if (!createdSite && item.compName === 'navbar') {
-                setSiteDatasToStore(pageRef, item);
-            }
+        
         },
         collect: (monitor) => ({
             isOver: monitor.isOver(),
@@ -68,11 +62,22 @@ export default function DropSection({pageRef, createdSite}) {
                     onClick={() => setPreview(!preview)}
                     className="absolute cursor-pointer top-2 right-2 text-[35px] bg-opacity-75 z-50 text-[red] border rounded-md border-[red] bg-white hover:bg-opacity-85 hover:scale-110 duration-300"
                 />
-                {createdSite && createdSite.length > 0 ? (
-                    createdSite.map((val, i) => (
-                        <div key={i}>{val.component}</div> // Display component data
-                    ))
-                ) : (
+                {navData ?  <div key={0} className='relative'>
+                      
+                
+                  <RenderComp obj={navData}/>
+                
+                      
+                        </div>   : null}
+                {createdSite && createdSite.length > 0 ? <div>
+                    
+                    
+                   { createdSite.map((val, i) => (
+                        <div key={i}>
+                            <RenderComp Component={val.component} obj={val}/>
+                        </div> // Display component data
+                    ))}</div>
+                 : (
                     <div className='h-full w-full flex justify-center items-center
                     text-white font-bold '>No Data To Preview!</div>
                 )}
@@ -91,6 +96,16 @@ export default function DropSection({pageRef, createdSite}) {
             } overflow-y-auto`}
             style={{ maxHeight: '100vh' }}
         >
+             {navData ?  <div key={0} className='relative'>
+                        <MdClose
+                    onClick={() => removeComponent(null, 'navbar')}
+                    className="absolute cursor-pointer -top-1 -right-1 text-[25px] bg-opacity-75 z-50 text-[red] border rounded-md border-[red] bg-white hover:bg-opacity-85 hover:scale-110 duration-300"
+                /> 
+                
+                  <RenderComp obj={navData}/>
+                
+                      
+                        </div>   : null}
             {createdSite && createdSite.length > 0 ? (
                 createdSite.map((val, i) => (
                     <div key={i} className='relative'>
@@ -98,7 +113,10 @@ export default function DropSection({pageRef, createdSite}) {
                     onClick={() => removeComponent(i, pageRef)}
                     className="absolute cursor-pointer -top-1 -right-1 text-[25px] bg-opacity-75 z-50 text-[red] border rounded-md border-[red] bg-white hover:bg-opacity-85 hover:scale-110 duration-300"
                 /> 
-                        <RenderComp Component={val.component} obj={val}/>
+                
+                  <RenderComp obj={val}/>
+                
+                      
                         </div> 
                 ))
             ) : (

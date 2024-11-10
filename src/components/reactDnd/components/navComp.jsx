@@ -4,32 +4,53 @@ import { getStoreData } from '@/datasStore/useContextStore';
 
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { addPage}= getStoreData()
+  const { addPage, editSiteName}= getStoreData()
   const [isAddPage, setIsAddPage] = useState(false)
   const [pageName, setPageName]= useState('')
+  const [isEdit, setIsEdit] = useState(false)
+  const [siteName, setSiteName]= useState('')
   if(!props) return <div>No Data!</div>
+
+  const handleOnSubmit=(e)=>{
+    e.preventDefault()
+    if(siteName.length < 3){
+      
+      return
+    }
+    editSiteName(siteName)
+    setIsEdit(false)
+    setSiteName('')
+
+  }
   const handleSubmit=(e)=>{
     e.preventDefault();
     addPage(pageName);
     setIsAddPage(false)
   }
+  const handleBlur=()=>{
+    if(siteName.length === 0) setIsEdit(false) 
+  }
   return (
-    <nav className="bg-gradient-to-r from-purple-500 to-purple-500 p-4 z-30 capitalize shadow-md sticky top-0">
+    <nav className="bg-gradient-to-r from-purple-500 to-purple-500 p-4 z-10 capitalize shadow-md sticky top-[150px]">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center text-white">
-          <Link href="/">
+         {isEdit ? <form onSubmit={handleOnSubmit} className='flex '>
+          <input autoFocus onBlur={handleBlur} value={siteName} onChange={(e)=>setSiteName(e.target.value)}  className='p-1 outline-gray-300 text-gray-500' placeholder={props.obj.renderDatas.logo}/>
+          <button type='submit' className='bg-purple-700 px-2 py-1'>Update</button>
+          </form> : <button
+          onClick={()=>setIsEdit(true)} >
           {props.obj.renderDatas.logo}
-          </Link>
+          </button>}
         </div>
-    {isAddPage && <div className='absolute flex justify-center items-center inset-0 z-50 h-screen bg-black bg-opacity-35'>
+    {isAddPage && <div className='absolute flex flex-col gap-y-1 justify-center items-center inset-0 z-20 h-screen bg-black bg-opacity-35'>
       
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className=''>
 
-        <input type="text" onChange={(e)=>setPageName(e.target.value)}/>
+        <input type="text" className='p-1 pl-2 rounded-md' placeholder='Enter Page Name' onChange={(e)=>setPageName(e.target.value)}/>
       </form>
       <button onClick={()=>setIsAddPage(false)} className="text-white font-semibold animate-pulse hover:text-gray-200
-               uppercase">back</button></div>}
+               uppercase rounded-md py-1 px-4 bg-[#c647d1]">back</button></div>}
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6">
           {props.obj.renderDatas.links.map((link, index) => {

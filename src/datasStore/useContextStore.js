@@ -12,11 +12,18 @@ const StoreDatas = ({children})=>{
   
 
 const removeComponent = (index, pageName) => {
-  
-  setCreatedSite((prev) => ({
-      ...prev,
-      [pageName]: prev[pageName].filter((_, i) => i !== index), // Filter out the item by index
-  }));
+  if(pageName === 'navbar'){
+    setCreatedSite((prev) => {
+        const { navbar, ...rest } = prev;
+        return rest;
+    });
+  }
+  else{
+    setCreatedSite((prev) => ({
+        ...prev,
+        [pageName]: prev[pageName].filter((_, i) => i !== index), // Filter out the item by index
+    }));
+  }
 };
 
 
@@ -33,31 +40,49 @@ const removeComponent = (index, pageName) => {
       }));
   };
   
+  const addNav=(navData)=>{
+        setCreatedSite((prev) => ({
+            ...prev,
+            navbar: navData,
+        }));
+  }
+  const getNav=()=>{
+    return createdSite && createdSite.navbar ? createdSite.navbar : null
+  }
 
   const addPage=(pageName)=>{
-    let temp = componentsData.find((val)=>val.compName === 'navbar')
-    temp.renderDatas.links.push(pageName)
+
+    setCreatedSite((prev) => {
+      return {...prev, navbar : {...prev.navbar , renderDatas:{...prev.navbar.renderDatas, links:[...prev.navbar.renderDatas.links,pageName]}}}
+    });
+   
+    
   }
 
   const recursionFunction=(id, item, children)=>{
       let temp = children.find((val)=>{
-        console.log(val.id, id)
           if(val.id === id){
-            debugger
+            
             val.children.push({...item, id:Math.random()})
           }
           else{
             if(val.children.length < 1) return;
-            debugger
+            
             recursionFunction(id,item, val.children)
           }
       })
   }
   const handleNestedDrop = (id, item, pageName) => {
-    console.log(createdSite[pageName])
-    debugger
+   
     recursionFunction(id,item, createdSite[pageName])
 
+};
+
+const editSiteName = (siteName) => {
+    let temp = {...createdSite.navbar, renderDatas:{
+        ...createdSite.navbar.renderDatas, logo:siteName
+      }}
+  setCreatedSite((prev) => ({...prev, navbar:temp}));
 };
 
   
@@ -66,7 +91,11 @@ const removeComponent = (index, pageName) => {
         handleNestedDrop, 
          createdSite, 
         setSiteDatasToStore,
-        preview, setPreview, removeComponent
+        preview, setPreview, removeComponent,
+        editSiteName,
+        addNav,
+        getNav
+        
     }}>
         {children}
     </UseContextData.Provider>

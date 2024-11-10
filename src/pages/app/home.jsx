@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Navbar from '@/components/navbar';
 import Skills from './skills';
@@ -16,7 +16,7 @@ const handleRedirect = () => {
   window.location.href = whatsappURL;
 };
 
-
+const [slidOpen, setSlidOpen] = useState(false)
   return (
     <div>
       <Head>
@@ -35,17 +35,17 @@ const handleRedirect = () => {
           
             <div className="flex-1 space-y-1 relative z-30">
               <>
-                <h1  data-aos="flip-up" className="text-[30px] font-bold group uppercase duration-500 bg-gradient-to-r from-purple-400 to-pink-200 text-white p-3">Hi, I am <span className='group-hover:underline duration-300 group-hover:leading-snug'>SathishKumar R</span></h1>
-                <h3 className="text-[20px] relative flex items-center gap-x-1"><span>MERN Stack developer </span>  <img src={"/tagLineGif.gif"} alt="" className='w-[25px] h-[25px] opacity-45'/></h3>
+                <h1  data-aos="flip-up" className="text-[30px]  group  font-mono capitalize duration-500 bg-gradient-to-r from-purple-400 to-pink-200 text-white p-3">Hi, I am <span className='group-hover:underline duration-300 group-hover:leading-snug'>SathishKumar R</span></h1>
+                <h3 className="text-[20px] text-purple-500 relative flex items-center gap-x-1"><span>MERN Stack developer </span>  <img src={"/tagLineGif.gif"} alt="" className='w-[25px] h-[25px] opacity-45'/></h3>
               </>
               <p className="text-[16px] text-gray-500 leading-relaxed font-semibold">
                 with 3 years of experience in designing, implementing, and maintaining robust web applications. Proven ability to translate complex business requirements into scalable and efficient technical solutions. Strong understanding of front-end and back-end development principles, with a passion for creating seamless user experiences. Skilled in developing dynamic web applications with real-time updates and interactive interfaces.
               </p>
             </div>
-            <div className="flex-1 grid justify-center items-center w-full]" data-aos="flip-left">
+            <div className="flex-1 grid justify-center z-30 items-center w-full]" data-aos="flip-left">
               {/* <img src={'/sathish.jpg'} alt="img" width={100} height={100} className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full hover:scale-95 duration-1000" /> */}
               {/* <ChatArray/> */}
-              <img src="/sathishImage.png" alt="" className='h-[60vh] w-full rounded-md'/>
+              <img src="/sathishImage.png" alt="" className='h-[60vh] w-full z-30 rounded-md'/>
             </div>
           </div>
         </div>
@@ -59,6 +59,9 @@ const handleRedirect = () => {
         <img src="/blinkStar.gif" alt="" className='absolute z-10 top-0 rounded-tl-md right-0 h-[60px] w-[60px] md:w-[100px] md:h-[100px] mx-auto bg-opacity-30'/>
           <h2 className="text-3xl font-bold mb-4 text-center  z-20 text-purple-500 underline underline-offset-4">Education</h2>
           <Education />
+          <button onClick={()=>setSlidOpen(!slidOpen)} className='z-50 absolute top-[50%] text-[black]'>{slidOpen ? 'close' : 'open'}</button>
+          <div onClick={()=>setSlidOpen(true)} className={`absolute duration-300 w-[50%] bg-[gray] opacity-60 z-40 h-full ${slidOpen ? '-left-[50%]': "left-0"}`}></div>
+          <div onClick={()=>setSlidOpen(true)} className={`absolute duration-300 w-[50%] bg-[gray] opacity-60 z-40 h-full ${slidOpen ? '-right-[50%]': "right-0"}`}></div>
         </div>
    
         {/* Skills */}
@@ -81,7 +84,7 @@ const handleRedirect = () => {
         </div>
 
         {/* projects */}
-        <div className="container sectionScrollInSmall md:sectionScrollInLg flex flex-col mx-auto min-h-[82vh] justify-center items-center bg-white shadow-lg rounded-lg p-3 md:p-6 relative" id="projects">
+        <div className="container sectionScrollInSmall md:sectionScrollInLg flex flex-col mx-auto min-h-[82vh] justify-center items-center bg-white shadow-lg rounded-lg p-3 relative" id="projects">
         <img src="/diwaliTop.gif" alt="" className='absolute top-0 rounded-tl-md  left-0 h-[60px] w-[60px] md:w-[100px] md:h-[100px] mx-auto'/>
         <h1 className="text-3xl font-bold mb-4 text-center text-purple-500 underline underline-offset-4">Projects</h1>
 
