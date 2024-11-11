@@ -59,9 +59,9 @@ const [slidOpen, setSlidOpen] = useState(false)
         <img src="/blinkStar.gif" alt="" className='absolute z-10 top-0 rounded-tl-md right-0 h-[60px] w-[60px] md:w-[100px] md:h-[100px] mx-auto bg-opacity-30'/>
           <h2 className="text-3xl font-bold mb-4 text-center  z-20 text-purple-500 underline underline-offset-4">Education</h2>
           <Education />
-          <button onClick={()=>setSlidOpen(!slidOpen)} className='text-white  z-50 flex justify-center items-center absolute top-[50%] font-mono text-[25px] animate-pulse'>{slidOpen ? 'close' : 'open'}</button>
+          {/* <button onClick={()=>setSlidOpen(!slidOpen)} className='text-white  z-50 flex justify-center items-center absolute top-[50%] font-mono text-[25px] animate-pulse'>{slidOpen ? 'close' : 'open'}</button>
           <div onClick={()=>setSlidOpen(true)} className={`absolute duration-500 w-[50%] bg-[#eb84f8] opacity-60 z-40 h-full ${slidOpen ? '-left-[60%]': "left-0"}`}></div>
-          <div onClick={()=>setSlidOpen(true)} className={`absolute duration-500 w-[50%] bg-[#eb84f8]  opacity-60 z-40 h-full ${slidOpen ? '-right-[60%]': "right-0"}`}></div>
+          <div onClick={()=>setSlidOpen(true)} className={`absolute duration-500 w-[50%] bg-[#eb84f8]  opacity-60 z-40 h-full ${slidOpen ? '-right-[60%]': "right-0"}`}></div> */}
         </div>
    
         {/* Skills */}
