@@ -50,6 +50,16 @@ const [slidOpen, setSlidOpen] = useState(false)
           </div>
         </div>
 
+        {/* projects */}
+        <div className="container sectionScrollInSmall md:sectionScrollInLg flex flex-col mx-auto min-h-[82vh] justify-center items-center bg-white shadow-lg rounded-lg p-3 relative" id="projects">
+        <img src="/diwaliTop.gif" alt="" className='absolute top-0 rounded-tl-md  left-0 h-[60px] w-[60px] md:w-[100px] md:h-[100px] mx-auto'/>
+        <h1 className="text-3xl font-bold mb-4 text-center text-purple-500 underline underline-offset-4">Projects</h1>
+
+        <ProjectsSection/>
+        <img src="/purpleBg.png" alt="" className='absolute opacity-25 bottom-0 right-0 left-0 w-full z-0 rounded-tl-md '/>
+
+        </div>
+
         {/* Education */}
         <div className="container flex flex-col sectionScrollInSmall md:sectionScrollInLg mx-auto min-h-[82vh] justify-center items-center bg-white shadow-lg rounded-lg  p-3 md:p-6 mt-5 relative" id="education">
         <img src={"/bgDot.gif"} alt="" className='absolute inset-0 z-0 h-full w-full object-fill bg-repeat-x'/>
@@ -83,15 +93,7 @@ const [slidOpen, setSlidOpen] = useState(false)
 
         </div>
 
-        {/* projects */}
-        <div className="container sectionScrollInSmall md:sectionScrollInLg flex flex-col mx-auto min-h-[82vh] justify-center items-center bg-white shadow-lg rounded-lg p-3 relative" id="projects">
-        <img src="/diwaliTop.gif" alt="" className='absolute top-0 rounded-tl-md  left-0 h-[60px] w-[60px] md:w-[100px] md:h-[100px] mx-auto'/>
-        <h1 className="text-3xl font-bold mb-4 text-center text-purple-500 underline underline-offset-4">Projects</h1>
-
-        <ProjectsSection/>
-        <img src="/purpleBg.png" alt="" className='absolute opacity-25 bottom-0 right-0 left-0 w-full z-0 rounded-tl-md '/>
-
-        </div>
+      
 
       {/* contact section */}
       <div className="container sectionScrollInSmall md:sectionScrollInLg flex flex-col mx-auto min-h-[82vh] justify-center items-center bg-white shadow-lg rounded-lg p-3 md:p-6 relative" id="contact">
