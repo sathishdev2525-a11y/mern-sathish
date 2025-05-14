@@ -133,14 +133,7 @@ const ContactSection = () => {
             <p className="text-lg font-medium text-gray-500"><MdHome/></p>
             <p className="text-lg text-gray-600">Coimbatore, Tamilnadu, India</p>
           </div>
-          <div className="mt-6 flex items-center gap-x-2">
-            <p className="text-lg font-medium text-gray-500"><MdCall/></p>
-            <p className="text-lg text-gray-500 ">+91 98-5653-5653</p>
-          </div>
-          <div className="mt-6 flex items-center gap-x-2">
-            <p className="text-lg font-medium text-gray-500"><MdEmail/></p>
-            <p className="text-lg text-blue-600 underline hover:text-blue-800">sathish5888@gmail.com</p>
-          </div>
+   
         </div>
       </div>
     </section>
