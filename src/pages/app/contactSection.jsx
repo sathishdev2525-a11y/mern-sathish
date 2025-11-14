@@ -11,7 +11,7 @@ const ContactSection = () => {
     email: '',
     message: '',
   });
-  const [isError, setIsError]= useState(null);
+  const [isError, setIsError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,35 +23,35 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(formData.firstName === "" ){
+    if (formData.firstName === "") {
       setIsError("firstName")
       return
     }
-      else if(formData.lastName === ""){
-        setIsError("lastName")
-        return
-      } 
-      else if(formData.email === "" ){
-        setIsError("email")
-        return
-      } else if(formData.message === ""){
-        setIsError("message")
-        return
-      }
-      else{
-        const mailtoLink = `mailto:sathish5888@gmail.com?subject=Contact%20Form%20Submission&body=First%20Name:%20${encodeURIComponent(formData.firstName)}%0ALast%20Name:%20${encodeURIComponent(formData.lastName)}%0AEmail:%20${encodeURIComponent(formData.email)}%0AMessage:%20${encodeURIComponent(formData.message)}`;
+    else if (formData.lastName === "") {
+      setIsError("lastName")
+      return
+    }
+    else if (formData.email === "") {
+      setIsError("email")
+      return
+    } else if (formData.message === "") {
+      setIsError("message")
+      return
+    }
+    else {
+      const mailtoLink = `mailto:sathishdev2525@gmail.com?subject=Contact%20Form%20Submission&body=First%20Name:%20${encodeURIComponent(formData.firstName)}%0ALast%20Name:%20${encodeURIComponent(formData.lastName)}%0AEmail:%20${encodeURIComponent(formData.email)}%0AMessage:%20${encodeURIComponent(formData.message)}`;
 
-        window.location.href = mailtoLink;
-      }
-    
-    
+      window.location.href = mailtoLink;
+    }
+
+
   };
 
   return (
     <section data-aos="fade-up"
-    data-aos-anchor-placement="top-center" data-aos-delay="100" className="bgCloud py-12 rounded-md w-full">
+      data-aos-anchor-placement="top-center" data-aos-delay="100" className="bgCloud py-12 rounded-md w-full">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-x-6">
-       
+
         <div className="mt-3">
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             <div>
@@ -129,12 +129,28 @@ const ContactSection = () => {
         </div>
         <div className="mt-3 bgImg p-3 md:p-8 rounded-lg shadow-lg font-medium text-gray-400">
           <h3 className="text-2xl font-extrabold text-purple-500">Contact Information</h3>
-          <div className="mt-6 flex items-center gap-x-2">
-            <p className="text-lg font-medium text-gray-500"><MdHome/></p>
+
+
+
+          {/* Mobile */}
+          <div className="mt-3 flex items-center gap-x-2">
+            <p className="text-lg font-medium text-gray-500"><MdCall /></p>
+            <p className="text-lg text-gray-600">+91 91595 72525</p>
+          </div>
+
+          {/* Email */}
+          <div className="mt-3 flex items-center gap-x-2">
+            <p className="text-lg font-medium text-gray-500"><MdEmail /></p>
+            <p className="text-lg text-gray-600">sathishdev2525@gmail.com</p>
+          </div>
+
+          {/* Location */}
+          <div className="mt-3 flex items-center gap-x-2">
+            <p className="text-lg font-medium text-gray-500"><MdHome /></p>
             <p className="text-lg text-gray-600">Coimbatore, Tamilnadu, India</p>
           </div>
-   
         </div>
+
       </div>
     </section>
   );

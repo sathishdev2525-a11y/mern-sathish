@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import StoreDatas from "@/datasStore/useContextStore";
 import CartProvider from "@/datasStore/storeContext";
 import StoreCompDatas from "@/datasStore/compDatas";
+
 export default function App({ Component, pageProps }) {
 
   useEffect(() => {

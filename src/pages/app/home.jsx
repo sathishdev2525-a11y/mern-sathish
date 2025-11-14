@@ -12,7 +12,7 @@ import ContactSection from './contactSection';
 export default function AppHome() {
 
 const handleRedirect = () => {
-  const whatsappURL = `https://wa.me/${9856535653}?text=${'Hi, Sathish '}`;
+  const whatsappURL = `https://wa.me/${9159572525}?text=${'Hi, Sathish '}`;
   window.location.href = whatsappURL;
 };
 
@@ -39,13 +39,12 @@ const [slidOpen, setSlidOpen] = useState(false)
                 <h3 className="text-[20px] text-purple-500 relative flex items-center gap-x-1"><span>MERN Stack developer </span>  <img src={"/tagLineGif.gif"} alt="" className='w-[25px] h-[25px] opacity-45'/></h3>
               </>
               <p className="text-[16px] text-gray-500 leading-relaxed font-semibold">
-                with 3 years of experience in designing, implementing, and maintaining robust web applications. Proven ability to translate complex business requirements into scalable and efficient technical solutions. Strong understanding of front-end and back-end development principles, with a passion for creating seamless user experiences. Skilled in developing dynamic web applications with real-time updates and interactive interfaces.
+                with 3.5 years of experience in designing, implementing, and maintaining robust web applications. Proven ability to translate complex business requirements into scalable and efficient technical solutions. Strong understanding of front-end and back-end development principles, with a passion for creating seamless user experiences. Skilled in developing dynamic web applications with real-time updates and interactive interfaces.
               </p>
             </div>
             <div className="flex-1 grid justify-center z-30 items-center w-full]" data-aos="flip-left">
-              {/* <img src={'/sathish.jpg'} alt="img" width={100} height={100} className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full hover:scale-95 duration-1000" /> */}
-              {/* <ChatArray/> */}
-              <img src="/sathishImage.png" alt="" className='h-[60vh] w-full z-30 rounded-md'/>
+           
+              <img src="/sathishImage (1).png" alt="" className='h-[60vh] w-full z-30 rounded-md'/>
             </div>
           </div>
         </div>
