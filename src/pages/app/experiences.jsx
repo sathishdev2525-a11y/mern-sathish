@@ -3,27 +3,51 @@ import { FaBriefcase, FaCode, FaChalkboardTeacher } from 'react-icons/fa'; // Im
 
 const experience = [
   {
-    role: 'ReactJS Front End Developer',
-    company: 'Zettastack in Coimbatore',
-    duration: '1 year',
-    description: 'Developed dynamic and interactive web applications for a software automation project using Next.js, MobX, Tailwind CSS, and React Drag & Drop. Collaborated closely with designers to implement responsive and user-friendly interfaces.',
-    icon: <FaBriefcase className="text-purple-400 text-2xl" />, // Icon for this role
+    role: 'React / Next.js Front-End Developer',
+    company: 'Zettastack, Coimbatore',
+    duration: '2021 – 2022',
+    description:
+      'Developed dynamic and interactive web applications using Next.js, React DnD, MobX, and Tailwind CSS. Built responsive interfaces and collaborated with designers to deliver user-friendly software automation solutions.',
+    icon: <FaBriefcase className="text-purple-400 text-2xl" />,
   },
+
   {
     role: 'MERN Stack Developer',
-    company: 'Siteocean Pvt Ltd in Coimbatore',
-    duration: '1.5 years',
-    description: 'Built full-stack web applications using MongoDB, Express, React, and Node.js. Implemented RESTful APIs and integrated third-party services. Worked on improving performance and scalability of applications.',
-    icon: <FaCode className="text-blue-400 text-2xl" />, // Icon for this role
+    company: 'Siteocean Pvt Ltd, Coimbatore',
+    duration: '2022 – Jan 2024',
+    description:
+      'Built full-stack web applications including a hyper-local search engine (similar to JustDial) using Next.js, Node.js, Express.js, and MongoDB. Implemented REST APIs, integrated third-party services, and optimized application performance and scalability.',
+    icon: <FaCode className="text-blue-400 text-2xl" />,
   },
+
   {
-    role: 'Trainer, Full-Stack',
-    company: 'StateStreetIt in Coimbatore',
-    duration: '3 months',
-    description: 'I had three months of experience as a MERN stack trainer at StateStreetIT. In this role, my responsibility was to train students to become full-stack web developers.',
-    icon: <FaChalkboardTeacher className="text-green-400 text-2xl" />, // Icon for this role
+    role: 'Full-Stack Trainer (MERN)',
+    company: 'StateStreetIT, Coimbatore',
+    duration: 'Jan 2024 – Mar 2024',
+    description:
+      'Trained students to become MERN full-stack developers. Provided practical training in React, Node.js, MongoDB, and Express. Guided multiple batches through hands-on real project tasks.',
+    icon: <FaChalkboardTeacher className="text-green-400 text-2xl" />,
+  },
+
+  {
+    role: 'MERN Stack Developer',
+    company: 'Izet E Payments Pvt Ltd, Coimbatore',
+    duration: '2024 – 2025',
+    description:
+      'Worked on various products including a WordPress-style drag-and-drop builder, hyper-local search engine, e-commerce platform with payment integration, chat application, and dynamic tree-structured websites.',
+    icon: <FaCode className="text-blue-400 text-2xl" />,
+  },
+
+  {
+    role: 'Software Developer',
+    company: 'Coarasco Software Solutions Pvt Ltd, Coimbatore',
+    duration: 'Jul 2025 – Nov 2025',
+    description:
+      'Worked as a web developer on an e-commerce platform using the MERN stack with Next.js. Contributed to UI development, API integration, product modules, and performance improvements.',
+    icon: <FaBriefcase className="text-purple-400 text-2xl" />,
   },
 ];
+
 
 const Experiences = () => {
   return (
