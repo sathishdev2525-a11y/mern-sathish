@@ -16,7 +16,8 @@ export default function WordPressClone({children}) {
             <WordPressNavbar />
             <div className='flex w-full overflow-hidden min-h-[100vh]'>
                 {/* Drag section */}
-                <div className='w-[20%] bg-gray-100 bg-opacity-45'>
+                <div className='w-[20%] bg-gray-100 bg-opacity-45 capitalize'>
+                   <div className='text-lg font-semibold text-purple-600 p-3 text-center bg-purple-100'>Components Listing</div>
                     <ListingComponents />
                 </div>
 

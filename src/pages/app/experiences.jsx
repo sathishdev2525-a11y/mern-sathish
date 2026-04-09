@@ -2,34 +2,7 @@ import React from 'react';
 import { FaBriefcase, FaCode, FaChalkboardTeacher } from 'react-icons/fa'; // Import relevant icons
 
 const experience = [
-  {
-    role: 'React / Next.js Front-End Developer',
-    company: 'Zettastack, Coimbatore',
-    duration: '2021 – 2022',
-    description:
-      'Developed dynamic and interactive web applications using Next.js, React DnD, MobX, and Tailwind CSS. Built responsive interfaces and collaborated with designers to deliver user-friendly software automation solutions.',
-    icon: <FaBriefcase className="text-purple-400 text-2xl" />,
-  },
-
-  {
-    role: 'MERN Stack Developer',
-    company: 'Siteocean Pvt Ltd, Coimbatore',
-    duration: '2022 – Jan 2024',
-    description:
-      'Built full-stack web applications including a hyper-local search engine (similar to JustDial) using Next.js, Node.js, Express.js, and MongoDB. Implemented REST APIs, integrated third-party services, and optimized application performance and scalability.',
-    icon: <FaCode className="text-blue-400 text-2xl" />,
-  },
-
-  {
-    role: 'Full-Stack Trainer (MERN)',
-    company: 'StateStreetIT, Coimbatore',
-    duration: 'Jan 2024 – Mar 2024',
-    description:
-      'Trained students to become MERN full-stack developers. Provided practical training in React, Node.js, MongoDB, and Express. Guided multiple batches through hands-on real project tasks.',
-    icon: <FaChalkboardTeacher className="text-green-400 text-2xl" />,
-  },
-
-  {
+   {
     role: 'MERN Stack Developer',
     company: 'Izet E Payments Pvt Ltd, Coimbatore',
     duration: '2024 – 2025',

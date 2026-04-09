@@ -13,7 +13,7 @@ const ProjectsSection=()=>{
           <div className="grid sm:grid-cols-2 md:grid-cols-4 capitalize font-mono gap-5 p-3 shadow-md  bg-white rounded-md">
           <Link href={'/dnd/homePage'} className="group relative rounded-md shadow-md hover:scale-105 duration-500">
               <img src={'/wordpress.gif'} alt="img" width={100} height={100} className="w-full z-10 rounded-t-md h-[160px]" />
-              <p className='font-bold p-2  text-[17px] group-hover:underline flex justify-between items-center text-[gray] underline underline-offset-2 hover:text-purple-500'>wordPress Clone              
+              <p className='font-bold p-2  text-[17px] group-hover:underline flex justify-between items-center text-[gray] underline underline-offset-2 hover:text-purple-500'>Drag and Drop              
               <FaArrowRight className=''/></p>
               <span className="h-[7px] w-[7px] rounded-full animate-ping bg-purple-500 z-30 absolute top-0 right-0">fe</span>
             </Link>

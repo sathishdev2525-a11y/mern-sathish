@@ -6,7 +6,7 @@ const education = [
     degree: 'Diploma in Electronics and Communication Engineering (DECE)',
     institution: 'RVS Polytechnic College in Coimbatore',
     description: 'Completed with a focus on electronic circuits, microprocessors, and communication systems.',
-    icon: <FaGraduationCap className="text-purple-400 text-2xl" />, // Icon for diploma
+    icon: <FaGraduationCap className="text-purple-600 text-2xl" />, // Icon for diploma
     img:"/honey.gif"
   },
   {
@@ -35,7 +35,7 @@ const Education = () => {
     >
       <div className="space-y-6 z-50 bg-white bg-opacity-45">
         {education.map((edu, index) => (
-          <div key={index} className="bg-white bg-opacity-70 relative overflow-hidden text-purple-400 duration-700 p-4 rounded-lg shadow flex items-start gap-4">
+          <div key={index} className="bg-white bg-opacity-70 relative overflow-hidden text-purple-600 duration-700 p-4 rounded-lg shadow flex items-start gap-4">
             {/* {edu.icon} Render the icon */}
            
             <img src={edu.img} alt="" className=' h-[50px] w-[50px] z-50'/>

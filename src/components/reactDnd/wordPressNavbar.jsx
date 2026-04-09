@@ -13,10 +13,9 @@ const WordPressNavbar = () => {
     logo: "/logo.png", // Replace with the path to your logo
     links: [
       { label: "Home", url: "/" },
-      { label: "About", url: "/about" },
+      { label: "About", url: "/#experiences" },
       { label: "Services", url: "/services", dropdown: ["Web Development", "App Development", "SEO"] },
-      { label: "Portfolio", url: "/portfolio" },
-      { label: "Contact", url: "/contact" },
+      { label: "Contact", url: "/#contact" },
     ],
   };
 
@@ -30,13 +29,13 @@ const WordPressNavbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
           {navData.links.map((link, index) => (
-            <div key={index} className="relative group">
+            <Link href={link.url} key={index} className="relative group">
               <span className='cursor-pointer'>
                 <span className="text-[#cd47e7] hover:text-blue-500">{link.label}</span>
               </span>
               {link.dropdown && (
                 <div
-                  className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-lg p-2 mt-2"
+                  className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-lg p-2"
                   onMouseEnter={() => setIsDropdownOpen(true)}
                   onMouseLeave={() => setIsDropdownOpen(false)}
                 >
@@ -47,7 +46,7 @@ const WordPressNavbar = () => {
                   ))}
                 </div>
               )}
-            </div>
+            </Link>
           ))}
           <button className='border text-[#2bb12b] flex items-center gap-x-1 rounded px-2 py-1 animate-pulse bg-[#ebffeb] hover:text-[#43b143] hover:border-[#48d148] duration-300' onClick={()=>setPreview(!preview)}><span>Preview</span> <FaRegEye/></button>
 

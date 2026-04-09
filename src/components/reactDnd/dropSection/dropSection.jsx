@@ -3,6 +3,7 @@ import { useDrop } from 'react-dnd';
 import { getStoreData } from '@/datasStore/useContextStore';
 import { MdClose } from "react-icons/md";
 import RenderComp from './renderComp';
+import { RiDragDropLine } from "react-icons/ri";
 
 export default function DropSection({pageRef, createdSite, navData}) {
     const { setSiteDatasToStore, preview, setPreview,
@@ -120,7 +121,17 @@ export default function DropSection({pageRef, createdSite, navData}) {
                         </div> 
                 ))
             ) : (
-                <div className='flex min-h-[90vh] justify-center items-center'>Drop items here</div>
+              <div className="flex flex-col items-center justify-center min-h-[90vh] border-2 border-dashed border-purple-300 rounded-lg bg-purple-50 text-center p-6">
+<RiDragDropLine className="text-4xl text-purple-400 mb-3" />
+  <p className="text-lg font-semibold text-purple-600">
+    Start Building Your Page
+  </p>
+
+  <p className="text-sm text-gray-600 mt-2">
+    Drag components from the left sidebar and drop them here to create your layout
+  </p>
+
+</div>
             )}
         </div>
     );
