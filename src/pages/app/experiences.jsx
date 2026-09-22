@@ -2,15 +2,6 @@ import React from 'react';
 import { FaBriefcase, FaCode, FaChalkboardTeacher } from 'react-icons/fa'; // Import relevant icons
 
 const experience = [
-   {
-    role: 'MERN Stack Developer',
-    company: 'Izet E Payments Pvt Ltd, Coimbatore',
-    duration: '2024 – 2025',
-    description:
-      'Worked on various products including a WordPress-style drag-and-drop builder, hyper-local search engine, e-commerce platform with payment integration, chat application, and dynamic tree-structured websites.',
-    icon: <FaCode className="text-blue-400 text-2xl" />,
-  },
-
   {
     role: 'Software Developer',
     company: 'Coarasco Software Solutions Pvt Ltd, Coimbatore',
@@ -19,6 +10,14 @@ const experience = [
       'Worked as a web developer on an e-commerce platform using the MERN stack with Next.js. Contributed to UI development, API integration, product modules, and performance improvements.',
     icon: <FaBriefcase className="text-purple-400 text-2xl" />,
   },
+  {
+    role: 'Software Developer',
+    company: 'App Innovation Technologies Pvt Ltd, Coimbatore',
+    duration: 'JUN 2026 – SEP 2026',
+    description:
+      'Developed a healthcare Life Care Plan Generator using React, Supabase, and AI/ML, enabling automated life care plan generation from uploaded patient documents.',
+    icon: <FaCode className="text-blue-400 text-2xl" />,
+  }
 ];
 
 
@@ -34,7 +33,7 @@ const Experiences = () => {
         {experience.map((exp, index) => (
           <div key={index} className="bg-white relative p-4 rounded-lg shadow hover:scale-100 duration-700 flex items-start gap-4">
             <div>{exp.icon}</div> {/* Render the icon here */}
-            <img src="/starBell.gif" alt="" className='absolute top-0  right-3 h-[60px] w-[60px] md:w-[80px] md:h-[80px] mx-auto'/>
+            <img src="/starBell.gif" alt="" className='absolute top-0  right-3 h-[60px] w-[60px] md:w-[80px] md:h-[80px] mx-auto' />
             <div>
               <h3 className="text-xl font-semibold text-purple-400">{exp.role}</h3>
               <p className="text-gray-600">{exp.company}</p>
