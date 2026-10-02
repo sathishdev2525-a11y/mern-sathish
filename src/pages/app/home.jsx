@@ -8,6 +8,7 @@ import Footer from '@/components/footer';
 import { FaWhatsapp } from "react-icons/fa";
 import ProjectsSection from './projects';
 import ContactSection from './contactSection';
+import ChatbotTrigger from '@/components/chatbot/ChatbotTrigger';
 
 export default function AppHome() {
 
@@ -26,6 +27,7 @@ const [slidOpen, setSlidOpen] = useState(false)
       </Head>
       <Navbar />
       <main className="bg-[#ffffff]  text-blue-500 min-h-screen p-2 space-y-8 relative">
+        <ChatbotTrigger />
         <span onClick={handleRedirect} className='fixed cursor-pointer animate-bounce bottom-5 right-4 md:right-8 p-3 rounded-full bg-purple-400
         text-[30px] text-white z-50'><FaWhatsapp/></span>
         {/* Banner */}
