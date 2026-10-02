@@ -28,8 +28,8 @@ const [slidOpen, setSlidOpen] = useState(false)
       <Navbar />
       <main className="bg-[#ffffff]  text-blue-500 min-h-screen p-2 space-y-8 relative">
         <ChatbotTrigger />
-        <span onClick={handleRedirect} className='fixed cursor-pointer animate-bounce bottom-5 right-4 md:right-8 p-3 rounded-full bg-purple-400
-        text-[30px] text-white z-50'><FaWhatsapp/></span>
+        {/* <span onClick={handleRedirect} className='fixed cursor-pointer animate-bounce bottom-5 right-4 md:right-8 p-3 rounded-full bg-purple-400
+        text-[30px] text-white z-50'><FaWhatsapp/></span> */}
         {/* Banner */}
         <div className="container flex relative mx-auto min-h-[75vh] justify-center items-center bg-white  shadow-lg rounded-lg">
         <img src="/bannerBgImg.png" alt="" className='absolute inset-0 z-0 h-full w-full object-fill'/>
